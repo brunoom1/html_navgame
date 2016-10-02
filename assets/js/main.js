@@ -17,7 +17,6 @@ App.prototype.init = function(){
     	else if(e.keyCode == 37){
     		__app.nav.status_ang = __app.nav.MOVING_INVERSE;
     	}
-
     });
 
     document.addEventListener("keyup", function(e){
@@ -33,16 +32,17 @@ App.prototype.init = function(){
     })
 
 
-
     this.initialize();    
 }
 
 App.prototype.initialize = function(){
 	this.nav = new Nav(30, 20, this);	
+	this.bgc = new BackgroundControll(this);
 }
 
 App.prototype.update = function(){
 	this.nav.update();
+	this.bgc.update();
 }
 
 App.prototype.draw = function(){

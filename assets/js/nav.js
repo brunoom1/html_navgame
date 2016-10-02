@@ -69,6 +69,40 @@ Nav.prototype.update = function(){
 		if (this.ang <= 0) this.ang = 360;
 	}
 
+	// offset screen
+	// if( (this.x + this.w) < 0 ){
+	// 	this.x = this.context.canvas.width;
+	// }
+
+	// if( (this.y + this.h) < 0 ){
+	// 	this.y = this.context.canvas.height;
+	// }
+
+	// if( this.y > this.context.canvas.height ){
+	// 	this.y = -this.h;
+	// }
+
+	// if( this.x > this.context.canvas.width ){
+	// 	this.x = -this.w;
+	// }
+
+
+	if( (this.x - 20) < 0 ){
+		this.x = 20;
+	}
+
+	if( (this.y - 20) < 0 ){
+		this.y = 20;
+	}
+
+	if( this.y > this.context.canvas.height - this.h){
+		this.y = this.context.canvas.height - this.h;
+	}
+
+	if( this.x > this.context.canvas.width - this.w){
+		this.x = this.context.canvas.width - this.w;
+	}
+
 
 	this.x += Math.cos(Math.PI / 180 * this.ang) * this.vel * Math.abs(this.acl);
 	this.y += Math.sin(Math.PI / 180 * this.ang) * this.vel * Math.abs(this.acl);
